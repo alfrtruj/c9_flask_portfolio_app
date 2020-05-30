@@ -77,8 +77,22 @@ def time_post():
               
             return render_template('time.html', result=answer)
 
-         
+	
+@app.route('/tic_tac_toc', methods=['GET','POST'])
+def add_numbers_post():
+	  # --> ['5', '6', '8']
+	  # print(type(request.form['text']))
+	  if request.method == 'GET':
+	  	return render_template('tic_tac_toc.html')
+	  elif request.method == 'POST':
+  	      print(request.form['text'].split())
+  	      total = 0
+  	      try:
+  	      	for str_num in request.form['text'].split():
+  	      		total += int(str_num)
+  	      	return render_template('tic_tac_toc.html', result=str(total))         
 
+	
 @app.route('/python_apps')
 def python_apps_page():
 	# testing stuff
