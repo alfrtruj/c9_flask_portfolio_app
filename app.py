@@ -151,7 +151,8 @@ def tic_tac_toc_post():
 		# play game
 	      def play_game():
 		  display_board()
-		  figure = input("What do you want, X or O: ")
+		  #figure = input("What do you want, X or O: ")
+		  figure = request.form['text']
 		  if figure != "X" and figure != "O":
 		      print("Wrong input!")
 		      print()
