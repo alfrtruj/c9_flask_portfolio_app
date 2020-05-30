@@ -85,15 +85,15 @@ def tic_tac_toc_post():
 	  if request.method == 'GET':
 	  	return render_template('tic_tac_toc.html')
 	  elif request.method == 'POST':
-  	      #print(request.form['text'].split())
-  	      #total = 0
-  	      #try:
-  	      	#for str_num in request.form['text'].split():
-  	      		#total += int(str_num)
-  	      	#return render_template('tic_tac_toc.html', result=str(total))         
-  	      #except ValueError:
-  	      	#return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
-	      def display_board():
+  	      print(request.form['text'].split())
+  	      total = 0
+  	      try:
+  	      	for str_num in request.form['text'].split():
+  	      		total += int(str_num)
+  	      	return render_template('tic_tac_toc.html', result=str(total))         
+  	      except ValueError:
+  	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
+	      """def display_board():
 		  # Display Board
 		  print(board[0] + "|" + board[1] + "|" + board[2])
 		  print(board[3] + "|" + board[4] + "|" + board[5])
@@ -164,7 +164,7 @@ def tic_tac_toc_post():
 
 		# Create board
 	      board = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
-	      play_game()
+	      play_game()"""
 
 	
 @app.route('/python_apps')
