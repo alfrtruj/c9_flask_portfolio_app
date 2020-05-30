@@ -79,7 +79,7 @@ def time_post():
 
 	
 @app.route('/tic_tac_toc', methods=['GET','POST'])
-def add_numbers_post():
+def tic_tac_toc_post():
 	  # --> ['5', '6', '8']
 	  # print(type(request.form['text']))
 	  if request.method == 'GET':
@@ -91,7 +91,9 @@ def add_numbers_post():
   	      	for str_num in request.form['text'].split():
   	      		total += int(str_num)
   	      	return render_template('tic_tac_toc.html', result=str(total))         
-
+  	      except ValueError:
+  	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
+	
 	
 @app.route('/python_apps')
 def python_apps_page():
